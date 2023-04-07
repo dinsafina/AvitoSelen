@@ -8,11 +8,9 @@ import pages.LocationChoose;
 import pages.MainPage;
 import pages.ProductsPage;
 import pages.base.BasePage;
-import property.PropertyVars;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class BaseTest {
-    protected PropertyVars propertyVars = new PropertyVars();
     private final WebDriver driver = CommonActions.createDriver();
     protected BasePage basePage = new BasePage(driver);
     protected LocationChoose locationChoose = new LocationChoose(driver);

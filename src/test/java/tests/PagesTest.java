@@ -2,7 +2,7 @@ package tests;
 
 import base.BaseTest;
 import org.junit.jupiter.api.Test;
-import pages.LocationChoose;
+import property.PropertyVars;
 import property.Values;
 
 
@@ -11,19 +11,18 @@ public class PagesTest extends BaseTest {
     final String CITY= "Казань";
     final int COUNT = 3;
 
-    Values values = propertyVars.getProperty();
+    final Values values = PropertyVars.getProperty();
 
     @Test
     public void chooseTheMostExpensiveTabletInKazan(){
-
         basePage.goToUrl(values.getUrl());
         mainPage.enterProduct(PRODUCT);
         mainPage.searchProductClick();
 
         locationChoose.clickCity();
         locationChoose.enterCity(CITY);
-        LocationChoose locationChoose1 = locationChoose.chooseCity();
-        locationChoose1.showResults();
+        locationChoose.chooseCity();
+        locationChoose.showResults();
 
         productsPage.dropDownClick();
         productsPage.chooseExpensive();

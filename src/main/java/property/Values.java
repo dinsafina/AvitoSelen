@@ -1,9 +1,9 @@
 package property;
 
 public class Values {
-private String url;
-private long implicit_wait;
-private long explicit_wait;
+    private String url;
+    private long implicit_wait;
+    private long explicit_wait;
 
     public Values(String url, long implicit_wait, long explicit_wait) {
         this.url = url;

@@ -17,14 +17,12 @@ public class MainPage extends BasePage {
     @FindBy(xpath = "//button[@data-marker='search-form/submit-button']")
     private WebElement searchProductBtn;
 
-    public MainPage enterProduct(String text){
+    public void enterProduct(String text){
         searchInput.click();
         searchInput.sendKeys(text);
-        return this;
     }
 
-    public MainPage searchProductClick(){
+    public void searchProductClick(){
         searchProductBtn.click();
-        return this;
     }
 }

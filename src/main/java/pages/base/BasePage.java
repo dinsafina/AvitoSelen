@@ -24,11 +24,6 @@ public class BasePage {
         driver.get(url);
     }
 
-    public WebElement stalenessOf(WebElement element) {
-        new WebDriverWait(driver, Duration.ofSeconds(values.getExplicit_wait())).until(ExpectedConditions.stalenessOf((element)));
-        return element;
-    }
-
     public WebElement waitElementIsClickable(WebElement element) {
         new WebDriverWait(driver, Duration.ofSeconds(values.getExplicit_wait())).until(ExpectedConditions.elementToBeClickable(element));
         return element;

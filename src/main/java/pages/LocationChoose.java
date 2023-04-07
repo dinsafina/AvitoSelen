@@ -24,36 +24,33 @@ public class LocationChoose extends BasePage {
     @FindBy(xpath = "//button[@data-marker='popup-location/save-button']")
     private WebElement showResultsBtn;
 
-    public LocationChoose clickCity() {
+    public void clickCity() {
         chooseCity.click();
-        return this;
     }
 
 
-    public LocationChoose enterCity(String city) {
+    public void enterCity(String city) {
         inputCity.click();
         inputCity.clear();
         inputCity.sendKeys(city);
-        return this;
     }
 
-    public LocationChoose chooseCity() {
+    public void chooseCity() {
         WebElement element = this.waitElementIsClickable(firstCityResult);
         element.click();
-        return this;
     }
 
-    public LocationChoose showResults() {
+    public void showResults() {
         for (int i = 0; i < 10; i++) {
             try {
                 WebElement element1 = this.waitElementIsClickable(showResultsBtn);
                 element1.click();
                 break;
-            }catch (StaleElementReferenceException e) {
+            } catch (StaleElementReferenceException e) {
                 WebElement element2 = this.waitElementIsClickable(showResultsBtn);
                 element2.click();
             }
         }
-        return new LocationChoose(driver);
+        new LocationChoose(driver);
     }
 }
