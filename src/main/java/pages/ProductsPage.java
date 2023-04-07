@@ -13,7 +13,7 @@ public class ProductsPage extends BasePage {
         super(driver);
     }
 
-    @FindBy(xpath = "//div[contains(@class, 'select-box')]")
+    @FindBy(xpath = "//div[contains(@class, 'desktop-1209suv')]")
     private WebElement dropDown;
 
     @FindBy(xpath = "//option[text()= 'Дороже']")
@@ -28,22 +28,19 @@ public class ProductsPage extends BasePage {
     @FindBy(xpath = "//*[text() = 'Только в названиях']")
     private WebElement checkBox;
 
-    public ProductsPage checkBoxClick(){
+    public void checkBoxClick(){
         WebElement element = this.waitElementIsClickable(checkBox);
         element.click();
-        return this;
     }
 
-    public ProductsPage dropDownClick() {
+    public void dropDownClick() {
         WebElement element = this.waitElementIsClickable(dropDown);
         element.click();
-        return this;
     }
 
-    public ProductsPage chooseExpensive() {
+    public void chooseExpensive() {
         WebElement element = this.waitElementIsClickable(expensive);
         element.click();
-        return this;
     }
 
     public void outputResults(int count) {
